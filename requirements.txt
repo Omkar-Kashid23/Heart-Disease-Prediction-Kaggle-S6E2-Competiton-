@@ -1,0 +1,9 @@
+# Data Manipulation
+numpy==1.26.4
+pandas==2.2.0
+
+# Machine Learning & Modeling
+scikit-learn==1.4.0
+
+# Environment & Notebook Support
+ipykernel
