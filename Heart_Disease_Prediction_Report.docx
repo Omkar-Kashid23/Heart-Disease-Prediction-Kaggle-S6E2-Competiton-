@@ -1,0 +1,42 @@
+# **Project Report: Large-Scale Heart Disease Prediction**
+
+### **1. Introduction**
+
+This project focuses on building a high-performance binary classification model to predict the presence of heart disease based on various clinical indicators. The model was trained using a large-scale dataset to ensure high reliability and generalization.
+
+### **2. Dataset Description**
+
+* **Scale**: The dataset contains **630,000 training samples** and 270,000 test samples.
+* **Features**: Includes 14 key clinical attributes such as Age, Sex, Chest Pain Type, BP, Cholesterol, and EKG results.
+* **Target Variable**: `Heart Disease` (classified as Presence or Absence).
+
+### **3. Data Preprocessing Pipeline**
+
+To handle the scale and variety of data, the following steps were implemented:
+
+* **Missing Value Analysis**: A check was performed confirming zero null values across the dataset.
+* **Feature Encoding**: Used **One-Hot Encoding** to transform categorical variables into a machine-readable format, resulting in a feature space of 453 columns.
+* **Feature Scaling**: Applied **StandardScaler** to normalize the range of independent variables, ensuring faster convergence for the gradient-based solver in Logistic Regression.
+
+### **4. Model Architecture**
+
+* **Algorithm**: **Logistic Regression**.
+* **Configuration**: Set `max_iter=1000` to ensure the model reached convergence given the high number of features.
+* **Validation Strategy**: **5-Fold Cross-Validation** was used to mitigate overfitting and provide a robust estimate of the model's performance on unseen data.
+
+### **5. Performance Results**
+
+The model was evaluated using the **ROC-AUC Score**, achieving highly consistent results across all folds.
+
+| Validation Fold | ROC-AUC Score |
+| --- | --- |
+| Fold 1 | 0.9559 |
+| Fold 2 | 0.9551 |
+| Fold 3 | 0.9560 |
+| Fold 4 | 0.9548 |
+| Fold 5 | 0.9554 |
+| **Average CV Score** | **0.9555** |
+
+### **6. Conclusion**
+
+The model demonstrated exceptional predictive capability with a **95.55% AUC score**. The stability of the scores across the 5-fold split confirms that the preprocessing and scaling steps were highly effective for this large dataset.
